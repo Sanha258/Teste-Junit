@@ -1,8 +1,11 @@
 package com.example.demo.service;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -58,5 +61,20 @@ public class CalculadoraTest {
     void  testarNull() {
         String valor = null;
         assertNull(valor, "O valor não deve ser nulo");
+    }
+
+    @Test
+    void testarObjeto() {
+        Calculadora c = new Calculadora();
+        assertSame(c,c,  "deve ser a mesma instancia" );
+        assertNotSame(c, service, "deve ser a mesma instancia" );
+        
+    }
+
+    @Test
+    void testarArray() {
+        int[] esperado = {1,2,3};
+        int[] atual = {1,2,3};
+        assertArrayEquals(esperado, atual, "os arrays devem ser iguais" );
     }
 }        
