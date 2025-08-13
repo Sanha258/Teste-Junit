@@ -5,18 +5,19 @@ import org.springframework.stereotype.Service;
 @Service
 public class Calculadora {
    
-     public double somar(double a, double b) {
+     public int somar(int a, int b) {
         return a + b;
     }
 
     public double dividir(double a, double b) {
-        if (b == 0) {
-            throw new ArithmeticException("Divisão por zero não é permitida.");
-        }
-        return a / b;
+    if (b == 0) {
+        throw new IllegalArgumentException("Divisão por zero não é permitida.");
+    }
+    return a / b;
     }
 
-    public double subtrair(double a, double b) {
+
+    public int subtrair(int a, int b) {
         return a - b;
     }
 

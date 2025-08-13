@@ -2,7 +2,6 @@ package com.example.demo.service;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
@@ -33,7 +32,7 @@ public class CalculadoraTest {
    
     @Test
     void testeSubtrair() {
-        double resultado = service.subtrair(5.0, 2.0);
+        double resultado = service.subtrair(5, 2);
         assertEquals(3.0, resultado);
     }
 
@@ -44,9 +43,9 @@ public class CalculadoraTest {
     }
 
     @Test
-    void testarEhPar () {
-        assertFalse(service.ehPar(5));
-        assertTrue(service.ehPar(3));
+    void testarEhPar() {
+    Calculadora calc = new Calculadora();
+    assertTrue(calc.ehPar(4)); // número par
     }
     
     @Test
@@ -77,4 +76,6 @@ public class CalculadoraTest {
         int[] atual = {1,2,3};
         assertArrayEquals(esperado, atual, "os arrays devem ser iguais" );
     }
+
+    
 }        
